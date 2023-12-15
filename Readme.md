@@ -101,57 +101,52 @@ Aplikasi Marketplace ini dirancang untuk memberikan pengalaman berbelanja online
 
 ## Panduan Penggunaan
 
-1. **Pendaftaran dan Login:**
+1. **Pendaftaran dan Login:**(belum lengkap)
 
    - Buka aplikasi dan klik tombol "Daftar" untuk membuat akun baru.
    - Isi formulir pendaftaran dan ikuti langkah-langkah verifikasi jika diperlukan.
    - Setelah mendaftar, gunakan tombol "Login" untuk masuk ke akun Anda.
 
-2. **Profil Pengguna:**
+2. **Profil Pengguna:**(belum tambahkan edit profile)
 
    - Setelah login, kunjungi halaman profil untuk mengedit informasi dan mengunggah foto profil.
    - Tambahkan bio atau deskripsi diri untuk berbagi informasi lebih lanjut.
 
-3. **Pengelolaan Produk:**
+3. **Pengelolaan Produk:**(sudah)
 
-   - Pergi ke halaman "Tambah Produk" untuk menambahkan produk baru.
-   - Gunakan halaman "Produk Saya" untuk mengelola produk yang sudah ada.
+   - Pergi ke halaman "Profile" untuk menambahkan produk baru.
+   - Gunakan halaman "Profile" untuk mengelola produk yang sudah ada.
 
-4. **Pencarian dan Pembelian:**
+4. **Pencarian dan Pembelian:**(belum)
 
    - Gunakan fitur pencarian dan penyaringan untuk menemukan produk yang diinginkan.
    - Tambahkan produk ke keranjang belanja dan lanjutkan ke proses pembayaran.
 
-5. **Rating dan Ulasan:**
+5. **Rating dan Ulasan:**(belum)
 
    - Beri rating dan tulis ulasan setelah pembelian untuk membantu pengguna lain.
    - Lihat ulasan pada halaman produk untuk mendapatkan umpan balik.
 
-6. **Notifikasi dan Histori Transaksi:**
+6. **Notifikasi dan Histori Transaksi:**(belum)
 
    - Periksa pemberitahuan untuk informasi terkini tentang transaksi dan promosi.
    - Kunjungi halaman "Histori Transaksi" untuk melihat riwayat pembelian Anda.
 
-7. **Manajemen Inventaris:**
-
-   - Pantau stok produk dan terima pemberitahuan jika stok hampir habis.
-
-8. **Dukungan Pelanggan:**
+7. **Dukungan Pelanggan:**(belum)
 
    - Gunakan formulir kontak atau pusat bantuan jika membutuhkan bantuan.
 
-9. **Analisis Penjualan:**
+8. **Analisis Penjualan:**(belum)
 
    - Lihat laporan dan statistik penjualan untuk memahami performa produk Anda.
 
-10. **Keamanan dan Privasi:**
-    - Pastikan untuk sel
+9. **Keamanan dan Privasi:**(belum)
 
-alu menggunakan koneksi yang aman dan privasi data terjaga.
+   - Pastikan untuk selalu menggunakan koneksi yang aman dan privasi data terjaga.
 
-11. **Responsif dan User-Friendly:**
+10. **Responsif dan User-Friendly:**(tidak terlalu)
 
     - Nikmati pengalaman berbelanja yang responsif dan ramah pengguna di semua perangkat.
 
-12. **Fitur Sosial (Opsional):**
+11. **Fitur Sosial (Opsional):**(belum)
     - Bagikan produk favorit Anda di media sosial untuk meningkatkan visibilitas.
