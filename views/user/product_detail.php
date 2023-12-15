@@ -43,6 +43,9 @@ $product = $products->getSingleProduct($_SESSION['user_id'],$_GET['id'])
 <!-- Produk Detail -->
 <section class="mb-8">
     <?php
+    $product_id = isset($_GET["id"]) ? intval($_GET["id"]) : 0;
+
+    $cek = $products->cekUserForBuy($_SESSION["user_id"], $product_id);
     if(!empty($producsInfo)){
         foreach($producsInfo as $p){
     ?>
@@ -55,9 +58,17 @@ $product = $products->getSingleProduct($_SESSION['user_id'],$_GET['id'])
             <h3 class="text-3xl font-bold mb-2"><?= $p['name']; ?></h3>
             <p class="text-gray-300"><?= $p['description']; ?></p>
             <p class="text-gray-300">Harga: <?= $p['price']; ?></p>
-            <p class="text-gray-300">Harga: <?= $p['username']; ?></p>
+            <p class="text-gray-300">Author: <?= $p['username']; ?></p>
             <!-- Tombol untuk Membeli Produk -->
+            <?php
+            if($cek == true){
+            ?>
+            <p class="text-green-500">Anda sudah membeli ini</p>
+            <?php
+            }else{?>
             <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Beli Produk</button>
+            <?php }
+            ?>
         </div>
     </div>
     <?php
@@ -70,9 +81,7 @@ $product = $products->getSingleProduct($_SESSION['user_id'],$_GET['id'])
 <!-- Konten yang akan di-blur jika belum membayar -->
 <?php
 // Memastikan $_GET["id"] telah di-set dan sesuai kebutuhan untuk menghindari SQL injection
-$product_id = isset($_GET["id"]) ? intval($_GET["id"]) : 0;
 
-$cek = $products->cekUserForBuy($_SESSION["user_id"], $product_id);
 
 if ($cek == true) {
     foreach ($product as $y) {
@@ -92,7 +101,7 @@ if ($cek == true) {
             <div class="video-container">
                 <!-- Tampilkan video sesuai dengan path atau file yang sesuai -->
                 <video controls>
-                    <source src="<?php echo $y['path']; ?>" type="video/mp4">
+                    <source src="<?php echo $y['file_path']; ?>" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>

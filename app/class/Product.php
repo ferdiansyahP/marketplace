@@ -62,9 +62,10 @@ class Product extends Database
     public function getSingleProduct($user_id, $product_id) {
         $cek = $this->cekUserForBuy($user_id, $product_id);
         if ($cek) {
-            $data = mysqli_query($this->conn, "SELECT product.*, kategori.nama_kategori, user.user_id, user.username FROM product 
+            $data = mysqli_query($this->conn, "SELECT product.*, product_file.*, kategori.nama_kategori, user.user_id, user.username FROM product 
             INNER JOIN kategori ON product.kategori_id = kategori.kategori_id 
             INNER JOIN user ON product.seller_id = user.user_id 
+            RIGHT JOIN product_file ON product.seller_id=product_file.seller_id 
             WHERE product.product_id='$product_id'");
             
             $result = [];
@@ -87,59 +88,7 @@ class Product extends Database
         }return $result;
     }
 
-    public function createProduct($sellerId, $name, $description, $price, $productType, $kategoriId, $file)
-{
-    $uploadedFile = $this->uploadFile($file, $productType, $name);
-    
-    if ($uploadedFile) {
-        // Sesuaikan query INSERT INTO dengan struktur tabel Anda
-        $insertQuery = "INSERT INTO product (seller_id, name, description, price, file, path, product_type, kategori_id) 
-                        VALUES ('$sellerId', '$name', '$description', '$price', '$file', '$uploadedFile', '$productType', '$kategoriId')";
-        
-        $insert = mysqli_query($this->conn, $insertQuery);
 
-        if ($insert) {
-            echo "Product information saved to database.";
-        } else {
-            echo "Error saving product information to database: " . mysqli_error($this->conn);
-        }
-    }else{
-        echo "baka";
-    }
-}
-
-public function uploadFile($file, $productType, $name)
-{
-    echo "udh disini<br>";
-    switch ($productType) {
-        case "zip":
-            $targetDirectory = "zip/";
-            break;
-        case "video":
-            $targetDirectory = "video/";
-            break;
-        case "pdf":
-            $targetDirectory = "pdf/";
-            break;
-        default:
-            $targetDirectory = "";
-    }
-    echo "Target Directory: " . $targetDirectory . "<br>";
-
-    $fileName = md5(pathinfo($file["name"], PATHINFO_FILENAME)); // Gunakan nama file tanpa ekstensi
-    echo "Hashed File Name: " . $fileName . "<br>";
-    $targetFile = "../../files/" . $targetDirectory . $fileName; // Perbaiki bagian ini
-    echo "Target File: " . $targetFile . "<br>";
-    $uploadOk = move_uploaded_file($file["tmp_name"], $targetFile);
-
-    if ($uploadOk) {
-        echo "The file " . htmlspecialchars(basename($file["name"])) . " has been uploaded.<br>";
-        return $targetFile;
-    } else {
-        echo "Sorry, there was an error uploading your file.<br>";
-        return false;
-    }
-}
 
 public function ProductDibeli($user_id){
     $sql = "SELECT transaction.*, product.* 

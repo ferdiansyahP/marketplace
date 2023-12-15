@@ -1,6 +1,7 @@
 # Nama Aplikasi Marketplace
 
-Aplikasi Marketplace ini dirancang untuk memberikan pengalaman berbelanja online yang menyenangkan dan aman. Berikut adalah daftar fitur dan panduan penggunaan aplikasi:
+Aplikasi Marketplace ini bertujuan untuk para Programmer yang ingin memberikan pelajaran Premium/Gratis,
+Dan user bisa membeli fitur Premium/ mencari fitur yang Gratis.
 
 ## Fitur Utama
 
@@ -10,7 +11,7 @@ Aplikasi Marketplace ini dirancang untuk memberikan pengalaman berbelanja online
   - Formulir pendaftaran sederhana untuk mendaftar sebagai pengguna baru.
   - Opsi verifikasi email (opsional) untuk meningkatkan keamanan akun.
 - **Fungsi Otentikasi:**
-  - Sistem login yang aman dengan perlindungan terhadap serangan brute force.
+  - Sistem login yang aman dengan perlindungan terhadap serangan brute force.(tambahkan verifikasi are you human?)
   - Opsi pemulihan kata sandi untuk pengguna yang lupa kata sandi.
 
 ### 2. Pengelolaan Profil
@@ -107,7 +108,7 @@ Aplikasi Marketplace ini dirancang untuk memberikan pengalaman berbelanja online
    - Isi formulir pendaftaran dan ikuti langkah-langkah verifikasi jika diperlukan.
    - Setelah mendaftar, gunakan tombol "Login" untuk masuk ke akun Anda.
 
-2. **Profil Pengguna:**(belum tambahkan edit profile)
+2. **Profil Pengguna:**(sudah)
 
    - Setelah login, kunjungi halaman profil untuk mengedit informasi dan mengunggah foto profil.
    - Tambahkan bio atau deskripsi diri untuk berbagi informasi lebih lanjut.

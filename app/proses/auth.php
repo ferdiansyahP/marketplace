@@ -8,5 +8,7 @@ if ($act == 'register'){
     $auth->login($_POST['username'],$_POST['password'],$_POST['cPassword']);
 }else if($act == 'logout'){
     $auth->logout();
+}else if ($act == 'edit'){
+    $auth->editProfile($_POST['user_id'],$_POST['username'],$_POST['email'],$_POST['bio']);
 }
 ?>

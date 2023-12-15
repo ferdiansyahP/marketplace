@@ -80,6 +80,12 @@ class Auth extends Database
         session_destroy();
         header("location: ../../views/login.php");
     }
+
+    public function editProfile($user_id, $username, $email, $bio){
+        $sql = "UPDATE user SET username='$username', email='$email', bio='$bio' WHERE user_id='$user_id'";
+        $query = mysqli_query($this->conn, $sql);
+        header("location: ../../views/user/user_profile.php");
+    }
 }
 
 ?>

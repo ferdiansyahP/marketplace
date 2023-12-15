@@ -38,6 +38,7 @@ $kategori = $profile->getKategori();
         <h3 class="text-lg font-bold mb-2">Nama Pengguna : <?= $u['username']; ?></h3>
         <p class="text-gray-300">Email : <?= $u['email']; ?></p>
         <p class="text-gray-300">Bio : <?= $u['bio']; ?></p>
+        <button onclick="openModalEdit()" class="bg-green-500 rounded-md text-white py-2 px-2 hover:bg-green-700 transition duration-300 mb-1 mt-1">Edit</button>
     <?php
         }}else{
             echo '<p class="text-red-300">Silahkan login terlebih dahulu</p>';
@@ -137,6 +138,42 @@ $kategori = $profile->getKategori();
     </div>
 </div>
 
+<!-- Modal untuk Upload Produk -->
+<div id="editProfileModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-gray-800 p-8 rounded-lg">
+        <h2 class="text-2xl font-bold neon-text mb-4">Edit Profile</h2>
+        <!-- Include form to upload product here -->
+        <form action="../../app/proses/auth.php?action=edit" method="post" class="space-y-4">
+            <!-- Form fields for uploading product -->
+            <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+            <?php
+            foreach($user as $eu){
+            ?>
+            <div>
+                <label for="editProfileForm" class="block text-gray-300">Username</label>
+                <input type="text" value="<?php echo $eu['username']; ?>" name="username" id="editProfileForm" class="w-full bg-gray-700 border border-gray-600 rounded-md p-2" required>
+            </div>
+            <div>
+                <label for="editProfileForm" class="block text-gray-300">Email</label>
+                <input type="email" value="<?php echo $eu['email']; ?>" name="email" id="editProfileForm" class="w-full bg-gray-700 border border-gray-600 rounded-md p-2" required>
+            </div>
+            <div>
+                <label for="editProfileForm" class="block text-gray-300">Bio</label>
+                <input type="text" value="<?php echo $eu['bio']; ?>" name="bio" id="editProfileForm" class="w-full bg-gray-700 border border-gray-600 rounded-md p-2">
+            </div>
+            <?php
+            }
+            ?>
+            <!-- Repeat the form fields for other product details -->
+            <div class="flex items-center space-x-4">
+                <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300">Upload Produk</button>
+                <button type="button" onclick="closeEditModal()" class="text-gray-300 hover:text-gray-500">Batal</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
 
 </div>
 
@@ -147,6 +184,13 @@ function openModal() {
 
 function closeModal() {
     document.getElementById('uploadProductModal').classList.add('hidden');
+}
+function openModalEdit() {
+    document.getElementById('editProfileModal').classList.remove('hidden');
+}
+
+function closeEditModal() {
+    document.getElementById('editProfileModal').classList.add('hidden');
 }
 </script>
 
